@@ -2,12 +2,12 @@
 
 
 <% if Helpers.is_logged_in?(session) %>
-  <h2> Welcome <%= Helpers.current_user(session).username %></h2>
+  <h2> Welcome, <%= Helpers.current_user(session).username %></h2>
   <h2> Balance: <%= Helpers.current_user(session).balance %></h3>
+  <p><a href="/">Log Out</a></p>
 <% else %>
-  <form> action='/error' method=get </form>
+  You Must <a href="/">Log In</a> to View Your Balance
 <% end %>
 
 
 <p><a href="/">Homepage</a></p>
-<p><a href="/">Log Out</a></p>
