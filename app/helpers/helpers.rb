@@ -7,6 +7,7 @@ class Helpers < ApplicationController
   end
 
   def is_logged_in?
+    binding.pry
   #  if session[:usernam].empty?
   #    redirect "/index"
     !!session[:user_id]
