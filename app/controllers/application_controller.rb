@@ -14,7 +14,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-    #raise params[:username].inspect
     @user = User.new(username: params["username"], password: params["password"])
     @user.save
     session[:username] = params[:username]
