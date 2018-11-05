@@ -12,7 +12,7 @@ class Helpers < ApplicationController
     !!session[:user_id]
   end
 
-  def current_user
+  def current_user(session)
     session[:user_id] == @user.id
   end
 
