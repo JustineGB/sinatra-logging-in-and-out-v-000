@@ -10,8 +10,8 @@ class Helpers < ApplicationController
 
   def self.current_user(session)
     #binding.pry
-    @user.id = session[:user_id]
-    @user 
+    session[:user_id] = @user.id
+    @user
   end
 
   def logout
