@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
+    binding.pry
     #user would have already been created so this is not a new user (not a 'registration' like the previous lab, just a log in...use find+by to find the user as their identity name/pass are already set up)
     #@user = User.new(username: params["username"], password: params["password"])
     #@user.save
@@ -22,7 +23,7 @@ class ApplicationController < Sinatra::Base
     @user = User.find_by(username: params["username"], password: params["password"])
     session[:user_id] = @user.id
       if @user.is_logged_in?
-        binding.pry
+        
         redirect '/account'
       else
         redirect '/'
