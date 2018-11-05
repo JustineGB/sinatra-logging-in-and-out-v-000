@@ -3,7 +3,7 @@ require 'pry'
 class Helpers < ApplicationController
 
   def login(username)
-    session[:username] = username 
+    session[:username] = username
   end
 
   def is_logged_in?
