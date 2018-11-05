@@ -33,6 +33,6 @@ class ApplicationController < Sinatra::Base
   #  else
   #  redirect '/error'
   #  end
-  end
+  #end
 
 end
