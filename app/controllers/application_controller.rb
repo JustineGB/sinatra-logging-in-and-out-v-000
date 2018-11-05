@@ -23,8 +23,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    binding.pry
-
     if is_logged_in?(session)
       redirect '/account'
     else
