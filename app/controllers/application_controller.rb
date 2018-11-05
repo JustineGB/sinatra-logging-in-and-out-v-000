@@ -27,12 +27,12 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
-  get '/account' do
-    if @user.id == session[:user_id]
-      erb :account
-    else
-    redirect '/error'
-    end
+  #get '/account' do
+  #  if @user.id == session[:user_id]
+  #    erb :account
+  #  else
+  #  redirect '/error'
+  #  end
   end
 
 end
