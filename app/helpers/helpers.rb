@@ -9,7 +9,7 @@ class Helpers < ApplicationController
   end
 
   def self.current_user(session)
-    session[:user_id] == @user.id
+    @user = User.find_by(session[:user_id])
   end
 
   def logout
