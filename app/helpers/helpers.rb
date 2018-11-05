@@ -10,7 +10,6 @@ class Helpers < ApplicationController
 
   def self.current_user(session)
     @user = User.find(session[:user_id])
-
   end
 
   def logout
