@@ -21,7 +21,8 @@ class ApplicationController < Sinatra::Base
     #(1) use `is_logged_in?` to display username & balance (if user logged-in)
     #ELSE: link to the homepage
     #(2) use current_user to show username and balance
-    redirect 'account'
+    erb "/account"
+    #redirect 'account'
   end
 
 
