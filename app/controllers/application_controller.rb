@@ -20,6 +20,8 @@ class ApplicationController < Sinatra::Base
     #session[:username] = params[:username]
     @user = User.find_by(username: params["username"], password: params["password"])
     session[:user_id] = @user.id
+    if @user.loggin_in?
+
     #(1) use `is_logged_in?` to display username & balance (if user logged-in)
     #ELSE: link to the homepage
     #(2) use current_user to show username and balance
