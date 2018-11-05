@@ -33,9 +33,9 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
-  get 'account' do
-    @user = User.find(session[:user_id])
-    erb :'account'
-  end
+  #get 'account' do
+  #  @user = User.find(session[:user_id])
+  #  erb :'account'
+  #end
 
 end
