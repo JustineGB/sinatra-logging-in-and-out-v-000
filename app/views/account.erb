@@ -5,7 +5,7 @@
   <h2> Welcome <%= Helpers.current_user(session).username %></h2>
   <h2> Balance: <%= Helpers.current_user(session).balance %></h3>
 <% else %>
-  <form> action="/error" method=get </form>
+  <form> action='/error' method=get </form>
 <% end %>
 
 
