@@ -2,11 +2,7 @@ require 'pry'
 
 class Helpers < ApplicationController
 
-  def login(username)
-    session[:username] = username
-  end
-
-  def is_logged_in?
+  def is_logged_in?(session)
   #  if session[:usernam].empty?
   #    redirect "/index"
     !!session[:user_id]
