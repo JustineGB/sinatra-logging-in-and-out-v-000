@@ -22,17 +22,18 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get '/logout' do
-    session.clear
-    redirect '/'
-  end
-
   get '/account' do
     if is_logged_in?(session)
+      binding.pry
       redirect '/account'
     else
       redirect '/error'
     end
+  end
+
+  get '/logout' do
+    session.clear
+    redirect '/'
   end
 
 end
