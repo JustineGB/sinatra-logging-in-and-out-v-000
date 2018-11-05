@@ -13,36 +13,17 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-
-
-
-  post ;/login/
-      #@user = User.new(username: params["username"], password: params["password"])
-      #@user.save
-      #session[:username] = params[:username]
-      #session[:user_id] = @user.id
-      #(1) use `is_logged_in?` to display username & balance (if user logged-in)
-      #ELSE: link to the homepage
-      #(2) use current_user to show username and balance
-
-
-
-
-  post '/login' do
-    @user = User.new(name: params["name"], email: params["email"], password: params["password"])
-    @user.save
-    session[:id] = @user.id
-    redirect '/account'
-  end
-
-  get '/sessions/login' do
-    erb :'sessions/login'
-  end
-
-  post '/sessions' do
+  post '/login' do 
+    #user would have already been created so this is not a new user (not a 'registration' like the previous lab, just a log in...use find+by to find the user as their identity name/pass are already set up)
+    #@user = User.new(username: params["username"], password: params["password"])
+    #@user.save
+    #session[:username] = params[:username]
     @user = User.find_by(email: params["email"], password: params["password"])
-    session[:id] = @user.id
-    redirect '/users/home'
+    session[:user_id] = @user.id
+    #(1) use `is_logged_in?` to display username & balance (if user logged-in)
+    #ELSE: link to the homepage
+    #(2) use current_user to show username and balance
+    redirect '/account'
   end
 
   get '/logout' do
@@ -50,9 +31,9 @@ class ApplicationController < Sinatra::Base
     redirect '/'
   end
 
-  #get 'account' do
-    #@user = User.find(session[:user_id])
-    #erb :'account'
-  #end
+  get 'account' do
+    @user = User.find(session[:user_id])
+    erb :'account'
+  end
   
 end
