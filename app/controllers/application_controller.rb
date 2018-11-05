@@ -23,11 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    if current_user(session)
-      redirect '/account'
-    else
-      erb :error
-    end
+    erb :account
   end
 
   get '/logout' do
