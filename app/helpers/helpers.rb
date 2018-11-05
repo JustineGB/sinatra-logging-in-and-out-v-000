@@ -9,8 +9,8 @@ class Helpers < ApplicationController
   end
 
   def self.current_user(session)
-    binding.pry
     @user = User.find(session[:user_id])
+
   end
 
   def logout
