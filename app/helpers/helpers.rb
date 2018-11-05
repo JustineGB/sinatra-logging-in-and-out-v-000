@@ -8,7 +8,7 @@ class Helpers < ApplicationController
   def is_logged_in?
   #  if session[:usernam].empty?
   #    redirect "/index"
-    !!session[:username]
+    !!session[:user_id]
   end
 
   def logout
