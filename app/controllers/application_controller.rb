@@ -20,11 +20,11 @@ class ApplicationController < Sinatra::Base
     #session[:username] = params[:username]
     @user = User.find_by(username: params["username"], password: params["password"])
     session[:user_id] = @user.id
-      if @user.loggin_in?
+      if @user.logged_in?
         binding.pry
         redirect '/account'
       else
-        redirect '/error'
+        shp '/error'
       end
     end
 
