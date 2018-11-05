@@ -1,5 +1,9 @@
 <h1>Your account page!</h1>
 
-<h2> Weclome, <%= @user %></h2>
+
+<% Helpers.is_logged_in?(session) %>
+<h2> Welcome <%= Helpers.current_user(session) %></h2>
+
+
 <p><a href="/">Homepage</a></p>
 <p><a href="/">Log Out</a></p>
