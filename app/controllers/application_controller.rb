@@ -11,12 +11,12 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     erb :index
-  end 
-
-  
+  end
 
 
-  post ;/login/ 
+
+
+  post ;/login/
       #@user = User.new(username: params["username"], password: params["password"])
       #@user.save
       #session[:username] = params[:username]
@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
 
 
 
-  
+
   post '/login' do
     @user = User.new(name: params["name"], email: params["email"], password: params["password"])
     @user.save
@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
 
   get 'account' do
     @user = User.find(session[:user_id])
-    erb :'/users/home'
+    erb :'account'
   end
 
 end
