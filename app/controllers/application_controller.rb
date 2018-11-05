@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  post '/login' do 
+  post '/login' do
     #user would have already been created so this is not a new user (not a 'registration' like the previous lab, just a log in...use find+by to find the user as their identity name/pass are already set up)
     #@user = User.new(username: params["username"], password: params["password"])
     #@user.save
@@ -35,5 +35,5 @@ class ApplicationController < Sinatra::Base
     @user = User.find(session[:user_id])
     erb :'account'
   end
-  
+
 end
