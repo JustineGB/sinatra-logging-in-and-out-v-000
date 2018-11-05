@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
     raise params.inspect
     @user = User.new(username: params["username"], password: params["password"])
     @user.save
-    session[:email] = user.email 
+    session[:email] = params[:email]
     session[:user_id] = @user.id
     #(1) use `is_logged_in?` to display username & balance (if user logged-in)
     #ELSE: link to the homepage
