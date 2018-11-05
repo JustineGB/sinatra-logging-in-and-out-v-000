@@ -13,6 +13,10 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/login' do
+    redirect '/account'
+  end
+
   post '/login' do
     redirect '/account'
   end
